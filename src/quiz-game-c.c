@@ -4,6 +4,22 @@
 #include <ctype.h> // Include ctype.h for string manipulation functions
 #include<time.h>
 
+void setGreenColor() {
+   printf("\033[0;32;22m"); // 0;32;22m sets a dark green color
+   
+}
+
+
+// Function to set text color to red
+void setRedColor() {
+    printf("\033[0;31m"); // 0;31m sets the color to red
+}
+
+// Function to reset text color to the default
+void resetColor() {
+    printf("\033[0m"); // Resets the color to default
+}
+
 
 struct Question {
     char text[100];
@@ -18,7 +34,7 @@ void toLowerCase(char *str) {
 }
 
 int main() {
-  clrscr();
+ 
     srand(time(NULL));
 
     char name[30];
@@ -28,14 +44,15 @@ int main() {
     scanf("%29s", name);
     getchar(); // Consume the newline character
 
-    printf("Hello, %s. We are gonna play quiz of 50 questions ok!?\n >>", name);
+printf("Hello, %s. Do you want to play a quiz game with 50 questions? (yes/no)\n >>", name);
+
     scanf("%3s", enter);
     getchar(); // Consume the newline character
 
     if (strcmp(enter, "yes") == 0) {
         printf("That's nice, %s. Let's start the game...\n", name);
 
-        struct Question questions[10]; // Create an array to hold questions
+        struct Question questions[100]; // Create an array to hold questions
 
         // Populate the array with questions and answers (as many  questions as possible)
  strcpy(questions[0].text, "Question 1: What is the capital of France?");
@@ -59,8 +76,9 @@ strcpy(questions[5].answer, "carbon dioxide");
 strcpy(questions[6].text, "Question 7: What is the chemical symbol for gold?");
 strcpy(questions[6].answer, "au");
 
-strcpy(questions[7].text, "Question 8: Who is the current President of the United States (as of September 2021)?");
-strcpy(questions[7].answer, "joe biden");
+strcpy(questions[7].text, "Question 8: What is the largest living species on Earth?");
+strcpy(questions[7].answer, "blue whale");
+
 
 strcpy(questions[8].text, "Question 9: What is the largest mammal on Earth?");
 strcpy(questions[8].answer, "blue whale");
@@ -346,7 +364,7 @@ strcpy(questions[99].answer, "rose");
         // strcpy(questions[2].text, "Question 3: ...");
         // strcpy(questions[2].answer, "...");
 
-        int numQuestions = 50; // Update to the number of questions
+        int numQuestions = 100; // Update to the number of questions
 
         int questionsOrder[100]; // Create an array to store the order of questions
 
@@ -377,10 +395,15 @@ strcpy(questions[99].answer, "rose");
             answer[strcspn(answer, "\n")] = 0; // Remove the newline character
 
             if (strcmp(answer, questions[index].answer) == 0) {
-                printf("Correct!\n");
-                score++; // Increment the score for a correct answer
+                 setGreenColor(); // Set text color to green for correct answer
+            printf("Correct!\n");
+            resetColor(); // Reset text color to default
+            score++;
+                
             } else {
-                printf("Sorry, %s is the wrong answer, %s.\n", answer, name);
+                setRedColor(); // Set text color to red for incorrect answer
+            printf("Sorry, %s is the wrong answer, %s.\n", answer, name);
+            resetColor(); // Reset text color to default
             }
         }
 
