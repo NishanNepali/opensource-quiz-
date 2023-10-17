@@ -5,8 +5,7 @@
 #include<time.h>
 
 void setGreenColor() {
-   printf("\033[0;32;22m"); // 0;32;22m sets a dark green color
-   
+   printf("\033[0;32;22m"); // 0;32;22m sets a dark green color 
 }
 
 
@@ -34,7 +33,7 @@ void toLowerCase(char *str) {
 }
 
 int main() {
- 
+ //clrscr();
     srand(time(NULL));
 
     char name[30];
@@ -361,8 +360,8 @@ strcpy(questions[99].answer, "rose");
 
 
         // Add more questions here (repeat this block for each question)
-        // strcpy(questions[2].text, "Question 3: ...");
-        // strcpy(questions[2].answer, "...");
+        // strcpy(questions[100].text, "Question 3: ...");
+        // strcpy(questions[100].answer, "...");
 
         int numQuestions = 100; // Update to the number of questions
 
@@ -402,7 +401,7 @@ strcpy(questions[99].answer, "rose");
                 
             } else {
                 setRedColor(); // Set text color to red for incorrect answer
-            printf("Sorry, %s is the wrong answer, %s.\n", answer, name);
+            printf("Sorry, %s is the correct answer, Dear %s.\n", questions[index].answer, name);
             resetColor(); // Reset text color to default
             }
         }
