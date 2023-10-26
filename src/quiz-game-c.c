@@ -350,8 +350,8 @@ strcpy(questions[96].answer, "argentine peso");
 strcpy(questions[97].text, "Question 98: Who is the current Prime Minister of Australia (as of September 2021)?");
 strcpy(questions[97].answer, "scott morrison");
 
-strcpy(questions[98].text, "Question 99: Which gas do plants absorb from the atmosphere?");
-strcpy(questions[98].answer, "carbon dioxide");
+strcpy(questions[98].text, "Question 99: What is the only word in the English language that has three consecutive vowels?");
+strcpy(questions[98].answer, "queue");
 
 strcpy(questions[99].text, "Question 100: What is the national flower of the United States?");
 strcpy(questions[99].answer, "rose");
