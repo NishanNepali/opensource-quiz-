@@ -22,7 +22,7 @@ void resetColor() {
 
 struct Question {
     char text[100];
-    char answer[50];
+    char answer[40];
 };
 
 // Function to convert a string to lowercase
@@ -36,7 +36,7 @@ int main() {
  //clrscr();
     srand(time(NULL));
 
-    char name[30];
+    char name[40];
     char enter[4];
 
     printf("Enter your name:\n >>");
@@ -412,6 +412,5 @@ strcpy(questions[99].answer, "rose");
     } else {
         printf("Okay, %s.\n", name);
     }
-
     return 0;
 }
